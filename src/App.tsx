@@ -6,7 +6,6 @@ import QuickBuyModal from "./Components/QuickBuyModal";
 import TopBar from "./Components/TopBar";
 import VisualColumn from "./Components/VisualColumn";
 import { productData } from "./data/productData";
-import { BuyPayload } from "./types/propTypes";
 import Toast from "./ui/Toast";
 
 export default function App() {
@@ -49,16 +48,8 @@ export default function App() {
   }
   const [toast, setToast] = useState("");
 
-  function confirmBuy({ name, phone }: BuyPayload) {
-    setToast(`شكراً يا ${name}! هنكلمك على ${phone}`);
-    closeModal();
-    setTimeout(() => setToast(""), 2500); // auto-hide after 2.5 sec
-    return;
-  }
-  function onDeliver({ name, phone }: BuyPayload) {
-    setToast(
-      `اهلا ${name} تم اختيار الدفع عند الاستلام. سيتم التواصل معك على رقم ${phone} لتأكيد الطلب `
-    );
+  function showToast(message: string) {
+    setToast(message);
     closeModal();
     setTimeout(() => setToast(""), 2500); // auto-hide after 2.5 sec
     return;
@@ -90,8 +81,7 @@ export default function App() {
         product={productData}
         isOpen={isModalOpen}
         onClose={closeModal}
-        onConfirm={confirmBuy}
-        onDeliver={onDeliver}
+        showToast={showToast}
       />
 
       <Toast toast={toast} />

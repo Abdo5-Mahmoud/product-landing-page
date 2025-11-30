@@ -46,10 +46,13 @@ export type QuickBuyModalProps = {
   product: Product;
   isOpen: boolean;
   onClose: () => void;
-  onConfirm: (payload: BuyPayload) => void;
-  onDeliver: (payload: BuyPayload) => void;
+  showToast: (message: string) => void;
 };
 
 export type ProductProps = {
   productProp: Product;
+};
+export type Errors = {
+  name?: string;
+  phone?: string;
 };
