@@ -31,7 +31,7 @@ export default function VisualColumn({
             <img
               src={product.images[heroIndex]}
               alt={product.name}
-              className="w-full h-[520px] object-cover"
+              className="w-full h-[520px] object-contain"
               fetchPriority="high"
               height={650}
             />

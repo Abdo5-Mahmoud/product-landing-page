@@ -1,14 +1,13 @@
+import { useEffect, useState } from "react";
 import "./App.css";
-import { useState, useEffect } from "react";
 
 import InfoColumn from "./Components/InfoColumn";
 import QuickBuyModal from "./Components/QuickBuyModal";
-import StickyMobileCTA from "./Components/StickyMobileCTA";
 import TopBar from "./Components/TopBar";
 import VisualColumn from "./Components/VisualColumn";
 import { productData } from "./data/productData";
-import Toast from "./ui/Toast";
 import { BuyPayload } from "./types/propTypes";
+import Toast from "./ui/Toast";
 
 export default function App() {
   // state used by child components:
@@ -85,7 +84,7 @@ export default function App() {
         />
       </main>
 
-      <StickyMobileCTA openModal={openModal} />
+      {/* <StickyMobileCTA openModal={openModal} /> */}
 
       <QuickBuyModal
         product={productData}

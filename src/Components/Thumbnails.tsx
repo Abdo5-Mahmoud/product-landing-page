@@ -11,7 +11,7 @@ export default function Thumbnails({
         <button
           key={i}
           onClick={() => setHeroIndex(i)}
-          className={`w-20 h-20 rounded-md overflow-hidden border ${
+          className={`w-20 h-20 rounded-md overflow-hidden border hover:scale-110 transition-transform ${
             i === heroIndex
               ? "ring-2 ring-offset-2 ring-green-400"
               : "opacity-80"
@@ -21,7 +21,7 @@ export default function Thumbnails({
           <img
             src={src}
             alt={`thumb-${i}`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover "
             loading="lazy"
             width={200}
             height={200}
