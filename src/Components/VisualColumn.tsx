@@ -6,13 +6,13 @@ export default function VisualColumn({
   product,
   heroIndex,
   setHeroIndex,
-  modelViewerLoaded,
-}: VisualColProps) {
+}: // modelViewerLoaded,
+VisualColProps) {
   return (
     <section className="space-y-4">
       <div className="relative rounded-xl overflow-hidden bg-white shadow-lg">
         <div className="w-full bg-slate-100 flex items-center justify-center">
-          {product.modelUrl && modelViewerLoaded ? (
+          {/* {product.modelUrl && modelViewerLoaded ? (
             // <model-viewer
             //   src={product.modelUrl}
             //   alt={product.name}
@@ -28,14 +28,15 @@ export default function VisualColumn({
             // />
             ""
           ) : (
-            <img
-              src={product.images[heroIndex]}
-              alt={product.name}
-              className="w-full h-[520px] object-contain"
-              fetchPriority="high"
-              height={650}
-            />
-          )}
+          )} */}
+          <img
+            src={product.images[0]}
+            alt={product.name}
+            className="w-full h-[520px] object-contain"
+            height={650}
+            fetchpriority="high"
+            decoding="async"
+          />
         </div>
 
         <Thumbnails

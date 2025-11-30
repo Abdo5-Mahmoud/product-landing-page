@@ -9,7 +9,7 @@ export type TopBarProps = {
 
 export type ThumbnailsProps = {
   images: string[];
-  heroIndex: number;
+  heroIndex?: number;
   setHeroIndex: (index: number) => void;
 };
 
@@ -19,9 +19,9 @@ export type GalleryProps = {
 
 export type VisualColProps = {
   product: Product;
-  heroIndex: number;
+  heroIndex?: number;
   setHeroIndex: (index: number) => void;
-  modelViewerLoaded: boolean;
+  modelViewerLoaded?: boolean;
 };
 
 export type OptionsProps = {

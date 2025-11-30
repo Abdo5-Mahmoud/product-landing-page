@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 
 import InfoColumn from "./Components/InfoColumn";
@@ -21,23 +21,23 @@ export default function App() {
   const [isModalOpen, setModalOpen] = useState(false);
 
   // تحميل سكربت model-viewer
-  const [modelViewerLoaded, setModelViewerLoaded] = useState(false);
+  // const [modelViewerLoaded, setModelViewerLoaded] = useState(false);
 
   // Load model-viewer script ONCE
-  useEffect(() => {
-    const existing = document.querySelector("script[data-model-viewer]");
-    if (existing) {
-      setModelViewerLoaded(true);
-      return;
-    }
+  // useEffect(() => {
+  //   const existing = document.querySelector("script[data-model-viewer]");
+  //   if (existing) {
+  //     setModelViewerLoaded(true);
+  //     return;
+  //   }
 
-    const s = document.createElement("script");
-    s.type = "module";
-    s.src = "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
-    s.setAttribute("data-model-viewer", "1");
-    s.onload = () => setModelViewerLoaded(true);
-    document.head.appendChild(s);
-  }, []);
+  //   const s = document.createElement("script");
+  //   s.type = "module";
+  //   s.src = "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
+  //   s.setAttribute("data-model-viewer", "1");
+  //   s.onload = () => setModelViewerLoaded(true);
+  //   document.head.appendChild(s);
+  // }, []);
 
   function openModal() {
     setModalOpen(true);
@@ -64,7 +64,7 @@ export default function App() {
           product={productData}
           heroIndex={heroIndex}
           setHeroIndex={setHeroIndex}
-          modelViewerLoaded={modelViewerLoaded}
+          // modelViewerLoaded={modelViewerLoaded}
         />
 
         <InfoColumn
